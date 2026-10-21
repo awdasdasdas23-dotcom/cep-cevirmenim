@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cep Çevirmenim</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>🌍 Cep Çevirmenim</h1>
+
+    <nav>
+      <button id="translatorTab">🌐 Çeviri</button>
+      <button id="gameTab">🎮 Kelime Oyunu</button>
+    </nav>
+
+    <section id="translatorSection">
+      <h2>Çok Dilli Çeviri</h2>
+
+      <label for="sourceLanguage">Çevrilecek dil</label>
+      <select id="sourceLanguage">
+        <option value="en">🇬🇧 İngilizce</option>
+        <option value="tr">🇹🇷 Türkçe</option>
+        <option value="de">🇩🇪 Almanca</option>
+        <option value="fr">🇫🇷 Fransızca</option>
+        <option value="es">🇪🇸 İspanyolca</option>
+        <option value="it">🇮🇹 İtalyanca</option>
+        <option value="ru">🇷🇺 Rusça</option>
+        <option value="ar">🇸🇦 Arapça</option>
+        <option value="ja">🇯🇵 Japonca</option>
+        <option value="ko">🇰🇷 Korece</option>
+      </select>
+
+      <button id="swapLanguages" class="swap">⇅ Dilleri Değiştir</button>
+
+      <label for="targetLanguage">Çevrilecek hedef dil</label>
+      <select id="targetLanguage">
+        <option value="tr" selected>🇹🇷 Türkçe</option>
+        <option value="en">🇬🇧 İngilizce</option>
+        <option value="de">🇩🇪 Almanca</option>
+        <option value="fr">🇫🇷 Fransızca</option>
+        <option value="es">🇪🇸 İspanyolca</option>
+        <option value="it">🇮🇹 İtalyanca</option>
+        <option value="ru">🇷🇺 Rusça</option>
+        <option value="ar">🇸🇦 Arapça</option>
+        <option value="ja">🇯🇵 Japonca</option>
+        <option value="ko">🇰🇷 Korece</option>
+      </select>
+
+      <label for="englishText">Metin</label>
+      <textarea id="englishText" placeholder="Çevirmek istediğin yazıyı buraya gir..."></textarea>
+
+      <button id="translateTextButton">Yazıyı Çevir</button>
+
+      <h3>Çeviri Sonucu</h3>
+      <p id="translatedText" class="result">Çevirin burada görünecek.</p>
+
+      <hr>
+
+      <h2>📷 Fotoğraftan Çeviri</h2>
+      <p>Dosyalarından yazı bulunan bir fotoğraf seç.</p>
+
+      <input type="file" id="photoInput" accept="image/*">
+      <img id="photoPreview" alt="Seçilen fotoğraf" hidden>
+
+      <button id="translateButton">Fotoğrafı Oku ve Çevir</button>
+      <p id="photoStatus"></p>
+    </section>
+
+    <section id="gameSection" hidden>
+      <h2>🎮 Zor Kelime Oyunu</h2>
+      <p>Her oyunda 20 soru, her doğru cevap 10 puan!</p>
+
+      <div id="quizStart">
+        <p>100'den fazla kelime arasından seçilen soruları çöz!</p>
+        <button id="startGameButton">Oyuna Başla</button>
+      </div>
+
+      <div id="quizArea" hidden>
+        <p id="questionNumber"></p>
+        <h3 id="questionWord"></h3>
+        <div id="answerOptions"></div>
+        <p id="feedback"></p>
+        <button id="nextQuestionButton" hidden>Sonraki Soru</button>
+      </div>
+
+      <div id="quizEnd" hidden>
+        <h3>🏆 Oyun Bitti!</h3>
+        <p id="finalScore"></p>
+        <button id="restartGameButton">Tekrar Oyna</button>
+      </div>
+    </section>
+
+    <footer>💙 Ücretsiz çeviri · Eğlenerek öğren!</footer>
+  </main>
+
+  <script src="render.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
